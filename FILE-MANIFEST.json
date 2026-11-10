@@ -1,7 +1,7 @@
 [
   {
     "path": ".github/workflows/verified-provider.yml",
-    "sha256": "01f640a4fbf52f989b8e29acedf18f93c58bdf8dc8e7c85dc3119b09570a7894"
+    "sha256": "6b51eadb5333fd45eb2c84c9300ef06bfe9d86cd4640354e399d1f22927b34dc"
   },
   {
     "path": ".gitignore",
@@ -25,11 +25,11 @@
   },
   {
     "path": "README.md",
-    "sha256": "29c21da18e6a401a462448c1f1d9b2457de6280c0628583a22ba7a476e84b75b"
+    "sha256": "fd5091d7d11a6ae427de0a6dc77053ffb17e35057a07d1946d04613fe6ac2f12"
   },
   {
     "path": "RELEASE-NOTES.txt",
-    "sha256": "b5628e52c4cdc86206af73b09cd0e0972e7fadbe48a80a538750ec11b3583c51"
+    "sha256": "15fd2d6196ebfdb0dc59ed35ec7768985b1ad7192deff77cfc15cba0c4f9d0cd"
   },
   {
     "path": "package-lock.json",
@@ -49,7 +49,7 @@
   },
   {
     "path": "review/DEMO-SEQUENCE.txt",
-    "sha256": "9b8302a1d2cd171aa841e35e4971e6902c6797710477f1855c7b0c1b37833821"
+    "sha256": "2eefa3aa23579902fb7a8f2acd5f6f21a859a8c8091b57ff40f2e639c4740c14"
   },
   {
     "path": "review/SOURCE-MANIFEST.json",
@@ -117,7 +117,7 @@
   },
   {
     "path": "src/provenance-policy.mjs",
-    "sha256": "6339208e3cce2b9a86b848d6865edf9be2ba689744e297be293efc54995e4b21"
+    "sha256": "2a15a3cc16a9ef288ab802522e0e68e39899f196c4d05835c2575d54db300a87"
   },
   {
     "path": "src/safe-diagnostic.mjs",
@@ -181,7 +181,7 @@
   },
   {
     "path": "test/provenance-policy.test.mjs",
-    "sha256": "64d631ba848c7542b256a7722261a3016330b3b04a580fa7f2b24c8f08715f4e"
+    "sha256": "4e711b2cc094c20be695ce4e95cdcd5b96c99c4290736a2e19b02235ee38954e"
   },
   {
     "path": "test/reasoning.test.mjs",
@@ -190,5 +190,17 @@
   {
     "path": "test/safe-diagnostic.test.mjs",
     "sha256": "f00d8825ddb57d49267e2d84c28f486da6a5ee324afc1c20ce72235a7cb2685c"
+  },
+  {
+    "path": "review/INCIDENT-BOUNDARY.md",
+    "sha256": "5c5afd4d2970dc60793fa46abb9fd79cd44b67e48ca54d737b82ecbbfeaea504"
+  },
+  {
+    "path": "review/SECURITY-DISPOSITION.md",
+    "sha256": "2a1e504df34fd33a82d62f4edd0e363bd0154343a65f5afab47ea8a44e5c9ec0"
+  },
+  {
+    "path": "test/integration/sdk-provenance-commit.test.mjs",
+    "sha256": "78c76046d0a75006ec5161da8172c052159495224f5627ffddbc35f6febde0b8"
   }
 ]

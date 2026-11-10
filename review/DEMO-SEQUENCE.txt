@@ -37,6 +37,10 @@ SIMULATED SDK / NO LIVE INFERENCE / TOOL-CALL CHUNKS, NOT TOOL EXECUTION.
 Do not cut away these labels when recording.
 
 WHAT NOT TO CLAIM
+Narration disclosure: "Verification does not prove the inference software is
+free of vulnerabilities. Our demo tests the client gate, not prevention of the
+recent server-side incident."
+Historical live records are historical, not post-patch deployment validation.
 No 'unhackable', 'protects every agent', 'proves the exact model', 'first ever',
 'NEAR endorsed', guaranteed prize or universal prevention of unsafe actions.
 Sources and unverified limits are listed in START-HERE.txt.

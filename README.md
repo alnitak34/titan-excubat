@@ -30,7 +30,7 @@ separately labelled historical result from [the reduced record](records/live-loo
 
 ## Evidence and its limits
 
-- Local unit suite: 50 passed, zero failed on 2026-11-10. These tests exercise
+- Local unit suite: 52 passed, zero failed on 2026-11-10. These tests exercise
   supplied verdicts, translation, lifecycle, transport limits and diagnostics.
 - Candidate integration run: [42758734014](https://github.com/alnitak34/near-agent-verification-lab/actions/runs/42758734014)
   passed 50 unit and 42 integration tests at `f3657c94202770c1d1d80a5909e1a4b9bab9a53b`.
@@ -38,7 +38,8 @@ separately labelled historical result from [the reduced record](records/live-loo
   and [reviewer guide](review/START-HERE.txt). Actual Harness/SDK code ran with
   controlled network, hardware-quote and provenance fixtures. This is not live
   hardware validation. Later licensing/documentation changes are described in
-  [release notes](RELEASE-NOTES.txt); runtime and test files are unchanged.
+  [release notes](RELEASE-NOTES.txt). The subsequent exact proxy-commit policy
+  and its two new unit tests are NOT covered by that historical integration run.
 - Recorded live loop: [42605913021](https://github.com/alnitak34/near-agent-verification-lab/actions/runs/42605913021/job/129121752100)
   at `121f47b06aa5810140b383653683f1feafb5607b`: two adapter calls, one harmless
   in-memory tool, matching final receipt, zero retries. One successful sample
@@ -65,20 +66,28 @@ The optional manual workflow in `.github/workflows/verified-provider.yml`
 performs installation on an ephemeral runner; review account billing before
 running it. The public staging copy uses package files at repository root.
 No live-inference workflow is included in that copy.
+Evidence uploads are disabled by default; test results remain in the run logs.
+Enable `retain_evidence` only after reviewing artifact storage allowance.
 
 The manifest pins SDK 0.2.1 and Harness alpha packages and overrides Zod to
 4.6.6. The [2026-11-10 npm audit](review/dependency-audit.json) reports zero high/critical/moderate entries and three low package entries for one unresolved Elliptic advisory. This is not a vulnerability-free clearance. A dependency's
 npm overrides do not control its host application's dependency resolution.
 Published package equivalence to the originally inspected source commits has
 not been established. See [package.json](package.json) and the lockfile.
+The exact locked SDK/DCAP archives were additionally inspected for the Elliptic
+advisory: the vulnerable signing operation is not used in the statically traced
+verification path. This does not remove or fix the dependency. See
+[security disposition](review/SECURITY-DISPOSITION.md).
 
 ## Verification policy
 
 The production adapter enables E2EE, TLS binding and explicit model/OS/compose
 measurement approval. It requires selected-image provenance for the configured
 NEAR repositories/workflows and does not fall back when verification fails.
-Repository/workflow identity is not an exact source revision or every image in
-the deployment. See [measurement policy](src/policy.mjs) and
+The proxy policy also requires the exact reviewed source revision
+`7924418b5eacb396a12ada208b0f2f0c82ec6d1d`; newer revisions require review too.
+Gateway and manager policies remain repository/workflow checks. This is not
+approval of every image or proof of the current runtime. See [measurement policy](src/policy.mjs) and
 [provenance policy](src/provenance-policy.mjs).
 
 Deployment measurements must be independently approved. Never automatically
@@ -87,6 +96,10 @@ belong in the host environment, never the website or repository.
 
 ## Security boundaries
 
+- Attestation and signatures do not prove that the approved inference software
+  is free of vulnerabilities. Compromise inside an approved environment may be
+  outside this client's detection boundary. Selected build provenance is not
+  proof of a patched SGLang version. See [incident review](review/INCIDENT-BOUNDARY.md).
 - A signature is not tool authorization, truth, or proof of exact model weights.
   The host must validate tool arguments and enforce permissions.
 - The local process and tools see plaintext. E2EE covers SDK-supported fields,

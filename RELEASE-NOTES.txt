@@ -2,7 +2,7 @@ Published 2026-11-10: https://github.com/alnitak34/titan-excubat.
 
 Validated base: private GitHub run 42758734014, commit
 f3657c94202770c1d1d80a5909e1a4b9bab9a53b.
-All src/ and test/ files are byte-identical to the validated candidate.
+At initial publication, all src/ and test/ files were byte-identical to the validated candidate.
 Dependency graph is unchanged; package-lock root metadata now declares MIT.
 Later changes: LICENSE, package license/file metadata, attribution, reviewer
 instructions, included historical logs and evidence, regenerated manifests.
@@ -10,3 +10,11 @@ No claim that the original run tested these later documentation edits.
 The original artifact ZIP and source manifest are retained unchanged in review/.
 Full private Git history, research notes, credentials and billing are excluded.
 No additional inference or installation was used for this assembly.
+
+Subsequent LOCAL security candidate, 2026-11-10 (not yet integration-validated):
+src/provenance-policy.mjs now requires the exact reviewed inference-proxy commit
+7924418b5eacb396a12ada208b0f2f0c82ec6d1d in addition to repository/workflow.
+test/provenance-policy.test.mjs adds two regression tests. 52 local unit tests
+pass; the historical 42 integration tests do not validate this new policy.
+No dependency, model/OS/compose approval or cryptographic implementation changed.
+See review/SECURITY-DISPOSITION.md. Fresh runtime evidence remains unavailable.

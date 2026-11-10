@@ -14,7 +14,10 @@ export function provenancePolicies(models, { verifyGateway, verifyModel }) {
       approveMeasurements(params);
       await verifyModel({ deployment: params.deployment,
         imagePolicies: { 'nearaidev/vllm-proxy-rs': {
-          repository: 'nearai/inference-proxy', workflow: '.github/workflows/build.yml' } },
+          repository: 'nearai/inference-proxy', workflow: '.github/workflows/build.yml',
+          // Reviewed OHTTP route restriction. New revisions require explicit review.
+          // This pins build provenance, not current-runtime or engine patch status.
+          commit: '7924418b5eacb396a12ada208b0f2f0c82ec6d1d' } },
         composeManagerImagePolicy: { imageRepository: 'nearaidev/compose-manager',
           repository: 'nearai/compose-manager', workflow: '.github/workflows/build.yml' } });
     },

@@ -1,6 +1,12 @@
 name: Verified provider isolated integration
 on:
   workflow_dispatch:
+    inputs:
+      retain_evidence:
+        description: 'Upload evidence files (uses artifact storage allowance)'
+        required: false
+        default: false
+        type: boolean
 permissions:
   contents: read
 concurrency:
@@ -30,7 +36,7 @@ jobs:
           node --test --test-reporter=tap test/*.test.mjs | tee evidence/unit.tap
           node --import ./test/integration/no-network.mjs --experimental-test-module-mocks --test --test-timeout=15000 --test-concurrency=1 --test-reporter=tap test/integration/*.test.mjs | tee evidence/integration.tap
       - name: Keep bounded evidence
-        if: always()
+        if: always() && inputs.retain_evidence
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:
           name: verified-provider-evidence
