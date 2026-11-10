@@ -25,11 +25,11 @@
   },
   {
     "path": "README.md",
-    "sha256": "fd5091d7d11a6ae427de0a6dc77053ffb17e35057a07d1946d04613fe6ac2f12"
+    "sha256": "8c4e78ec0e135ba7a77971a7fdc3775aba904f22a20447a33c6a9f40c38a92ec"
   },
   {
     "path": "RELEASE-NOTES.txt",
-    "sha256": "15fd2d6196ebfdb0dc59ed35ec7768985b1ad7192deff77cfc15cba0c4f9d0cd"
+    "sha256": "13fd74f6803986755036aaf9410e5b0ddd5a7d484e7005f94ca365da557216c4"
   },
   {
     "path": "package-lock.json",
@@ -197,10 +197,18 @@
   },
   {
     "path": "review/SECURITY-DISPOSITION.md",
-    "sha256": "2a1e504df34fd33a82d62f4edd0e363bd0154343a65f5afab47ea8a44e5c9ec0"
+    "sha256": "2c70ff9ed41a0c6faf4e1214a632e017dd5e1a39314bacc38c0e2f22bcb6ab11"
   },
   {
     "path": "test/integration/sdk-provenance-commit.test.mjs",
     "sha256": "78c76046d0a75006ec5161da8172c052159495224f5627ffddbc35f6febde0b8"
+  },
+  {
+    "path": "review/logs/security-unit.tap",
+    "sha256": "4b5a8c9ea7cb84e9ed0d4b3e084af1a82e67727ddab18015a67a4b51a9b91e4e"
+  },
+  {
+    "path": "review/logs/security-integration.tap",
+    "sha256": "e9f31964a973e1614ad6240789fb44a9d397a8415daf185139f456d3fb9ccbad"
   }
 ]

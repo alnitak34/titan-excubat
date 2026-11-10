@@ -18,3 +18,11 @@ test/provenance-policy.test.mjs adds two regression tests. 52 local unit tests
 pass; the historical 42 integration tests do not validate this new policy.
 No dependency, model/OS/compose approval or cryptographic implementation changed.
 See review/SECURITY-DISPOSITION.md. Fresh runtime evidence remains unavailable.
+
+Validation completed for the preceding candidate at commit
+7e5317df647308c3c4e1037404d8da0c1c4b0115:
+https://github.com/alnitak34/titan-excubat/actions/runs/42861197288
+52 unit + 48 integration tests passed; zero failures/skips. Six new SDK
+source-policy cases use an explicitly simulated Sigstore/TUF boundary.
+Artifact upload was disabled. Exported TAP logs are included in review/logs/.
+Subsequent changes record this result only; source/tests/dependencies unchanged.

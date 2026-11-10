@@ -1,4 +1,4 @@
-# Security disposition — 2026-11-10 local candidate
+# Security disposition — 2026-11-10
 
 ## Elliptic advisory
 
@@ -39,16 +39,18 @@ zero output when the supplied provenance checker rejects it. These new tests
 simulate the checker; they do not verify real provenance signatures.
 
 The previous 50-unit/42-integration record predates this policy change. A fresh
-isolated actual-package integration run is required before declaring this
-candidate integration-validated. No local dependency installation or paid live
-inference was performed for this change.
+public isolated run [42861197288](https://github.com/alnitak34/titan-excubat/actions/runs/42861197288)
+passed 52 unit and 48 actual-package integration tests at
+`7e5317df647308c3c4e1037404d8da0c1c4b0115`, with zero failures or skips.
+No local dependency installation or paid live inference was performed.
 
 Six additional integration cases call the actual SDK's exported image verifier
 with the production commit policy: matching revision, different revision, and
 certificate/statement source mismatch, for SLSA v1 and v0.2. Sigstore signature,
 certificate parsing and TUF trust are simulated explicitly. These tests exercise
 the SDK's source-policy enforcement, not genuine signed attestations. Execution
-status must be read from the candidate's own CI run, not the historical logs.
+status is confirmed by that candidate's CI run; all six passed. The exported
+logs are in logs/security-unit.tap and logs/security-integration.tap.
 
 Post-incident current deployment verification remains NOT ESTABLISHED. Preserve
 the offline demo labels and historical-live-record labels. Do not use the client

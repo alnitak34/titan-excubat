@@ -30,6 +30,12 @@ separately labelled historical result from [the reduced record](records/live-loo
 
 ## Evidence and its limits
 
+- Security-policy revision: public run [42861197288](https://github.com/alnitak34/titan-excubat/actions/runs/42861197288)
+  passed 52 unit and 48 integration tests at `7e5317df647308c3c4e1037404d8da0c1c4b0115`.
+  Included [unit](review/logs/security-unit.tap) and [integration](review/logs/security-integration.tap)
+  logs preserve those results. Six new cases exercise the real SDK's source-commit
+  checks with a simulated Sigstore/TUF boundary. They are not live attestation or
+  genuine provenance-signature validation. Later edits only document this result.
 - Local unit suite: 52 passed, zero failed on 2026-11-10. These tests exercise
   supplied verdicts, translation, lifecycle, transport limits and diagnostics.
 - Candidate integration run: [42758734014](https://github.com/alnitak34/near-agent-verification-lab/actions/runs/42758734014)
