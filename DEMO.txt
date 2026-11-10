@@ -1,0 +1,49 @@
+DEMO PRIVADA — NEAR AI verified provider for DeepSeek Harness
+
+Ejecutar desde la carpeta del proyecto, con Node ya disponible:
+  node scripts/demo.mjs
+
+No requiere npm install ni API key. No consulta NEAR y no consume crédito de inferencia.
+La demo combina evidencia histórica y una prueba local. Ambas se identifican en pantalla.
+
+GUION PARA PRESENTAR
+
+Problema:
+Un agente puede convertir una respuesta de un modelo en una llamada a herramienta.
+Nuestro adaptador exige completar las verificaciones configuradas antes de entregar
+texto o llamadas a herramienta al bucle de Harness.
+
+Mostrar:
+1. El enlace de la ejecución real 42605913021. Dos respuestas verificadas, una
+   herramienta inocua y confirmación del resultado, sin reintentos.
+2. La prueba local: mientras no llega el veredicto, salen cero chunks.
+3. La prueba local con firma solo del gateway o verificación rechazada:
+   se bloquea toda salida. El SDK de estos escenarios es simulado; no llamarlos
+   ataques ejecutados contra NEAR ni pruebas criptográficas.
+
+Contribución:
+Integración de verificación en el límite entre el modelo y el agente, más
+diagnósticos saneados que conservan el motivo del rechazo sin exponer prompts,
+credenciales ni respuestas. La verificación criptográfica se delega al SDK NEAR.
+No presentamos su criptografía como creación nuestra.
+
+Límites que deben decirse:
+- Una ejecución en vivo exitosa; no prueba de disponibilidad ni auditoría completa.
+- Fallos históricos aún sin explicación. No afirmar que están resueltos.
+- La verificación de procedencia no valida que la acción propuesta sea segura.
+- El host local maneja texto plano. Permisos y validación de herramientas siguen
+  siendo responsabilidad del host.
+- La lista de despliegues permitidos sigue siendo explícita; no se amplía sola.
+
+FUENTES
+Ejecución real:
+https://github.com/alnitak34/near-agent-verification-lab/actions/runs/42605913021/job/129121752100
+Regresión aislada (50 unidades / 42 integración, transportes controlados):
+https://github.com/alnitak34/near-agent-verification-lab/actions/runs/42566017188/job/128992586404
+Diseño público original, que se acredita en NOTICE.md:
+https://github.com/nearai/inference-sdk/issues/108
+
+ANTES DE UNA PRESENTACIÓN EXTERNA
+El repositorio es privado: los enlaces no garantizan acceso a los jueces.
+Preparar y revisar un paquete compartible y verificar las reglas vigentes de
+entrega. Este guion no cambia la visibilidad ni realiza una inscripción.

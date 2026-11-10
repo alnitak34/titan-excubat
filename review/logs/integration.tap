@@ -1,0 +1,271 @@
+TAP version 13
+# (node:2230) ExperimentalWarning: Module mocking is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# (node:2230) DeprecationWarning: mock.module(): options.namedExports is deprecated. Use options.exports instead.
+# Subtest: combined real Harness/plugin/SDK waits for signature, executes one tool, encrypts next turn
+ok 1 - combined real Harness/plugin/SDK waits for signature, executes one tool, encrypts next turn
+  ---
+  duration_ms: 266.896516
+  type: 'test'
+  ...
+# Subtest: typed tool positive control executes the permitted argument
+ok 2 - typed tool positive control executes the permitted argument
+  ---
+  duration_ms: 147.229259
+  type: 'test'
+  ...
+# Subtest: unsupported numeric maximum is rejected when registering the typed tool
+ok 3 - unsupported numeric maximum is rejected when registering the typed tool
+  ---
+  duration_ms: 0.847107
+  type: 'test'
+  ...
+# Subtest: verified output does not bypass real Harness execution boundary: invalid-tool-args
+ok 4 - verified output does not bypass real Harness execution boundary: invalid-tool-args
+  ---
+  duration_ms: 136.853071
+  type: 'test'
+  ...
+# Subtest: verified output does not bypass real Harness execution boundary: tool-denied
+ok 5 - verified output does not bypass real Harness execution boundary: tool-denied
+  ---
+  duration_ms: 124.253902
+  type: 'test'
+  ...
+# Subtest: verified output does not bypass real Harness execution boundary: approval-unavailable
+ok 6 - verified output does not bypass real Harness execution boundary: approval-unavailable
+  ---
+  duration_ms: 119.924745
+  type: 'test'
+  ...
+# Subtest: combined real Harness/plugin/SDK executes zero tools: bad-signature
+ok 7 - combined real Harness/plugin/SDK executes zero tools: bad-signature
+  ---
+  duration_ms: 75.380499
+  type: 'test'
+  ...
+# Subtest: combined real Harness/plugin/SDK executes zero tools: tampered-body
+ok 8 - combined real Harness/plugin/SDK executes zero tools: tampered-body
+  ---
+  duration_ms: 49.477431
+  type: 'test'
+  ...
+# Subtest: combined real Harness/plugin/SDK executes zero tools: missing-signature
+ok 9 - combined real Harness/plugin/SDK executes zero tools: missing-signature
+  ---
+  duration_ms: 47.53372
+  type: 'test'
+  ...
+# Subtest: combined real Harness/plugin/SDK executes zero tools: gateway-only
+ok 10 - combined real Harness/plugin/SDK executes zero tools: gateway-only
+  ---
+  duration_ms: 62.037381
+  type: 'test'
+  ...
+# Subtest: combined real Harness/plugin/SDK executes zero tools: nonce
+ok 11 - combined real Harness/plugin/SDK executes zero tools: nonce
+  ---
+  duration_ms: 29.915137
+  type: 'test'
+  ...
+# Subtest: combined real Harness/plugin/SDK executes zero tools: spki
+ok 12 - combined real Harness/plugin/SDK executes zero tools: spki
+  ---
+  duration_ms: 13.957873
+  type: 'test'
+  ...
+# Subtest: combined real Harness/plugin/SDK executes zero tools: os-policy
+ok 13 - combined real Harness/plugin/SDK executes zero tools: os-policy
+  ---
+  duration_ms: 17.838608
+  type: 'test'
+  ...
+# Subtest: combined real Harness/plugin/SDK executes zero tools: compose-policy
+ok 14 - combined real Harness/plugin/SDK executes zero tools: compose-policy
+  ---
+  duration_ms: 21.909491
+  type: 'test'
+  ...
+# Subtest: combined real Harness/plugin/SDK executes zero tools: provenance
+ok 15 - combined real Harness/plugin/SDK executes zero tools: provenance
+  ---
+  duration_ms: 15.138678
+  type: 'test'
+  ...
+# Subtest: combined real Harness/plugin/SDK executes zero tools: oversized-body
+ok 16 - combined real Harness/plugin/SDK executes zero tools: oversized-body
+  ---
+  duration_ms: 40.27488
+  type: 'test'
+  ...
+# Subtest: combined real Harness/plugin/SDK cancellation suppresses late valid signature
+ok 17 - combined real Harness/plugin/SDK cancellation suppresses late valid signature
+  ---
+  duration_ms: 66.913301
+  type: 'test'
+  ...
+# (node:2244) ExperimentalWarning: Module mocking is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# (node:2244) DeprecationWarning: mock.module(): options.namedExports is deprecated. Use options.exports instead.
+# Subtest: bounded live-loop harness replays a receipt only after verified tool execution
+ok 18 - bounded live-loop harness replays a receipt only after verified tool execution
+  ---
+  duration_ms: 251.135189
+  type: 'test'
+  ...
+# Subtest: bounded live-loop harness stops before executing a tool with an invalid signature
+ok 19 - bounded live-loop harness stops before executing a tool with an invalid signature
+  ---
+  duration_ms: 72.690486
+  type: 'test'
+  ...
+# Subtest: second-turn rejection preserves a safe adapter code without retrying or leaking content
+ok 20 - second-turn rejection preserves a safe adapter code without retrying or leaking content
+  ---
+  duration_ms: 146.336643
+  type: 'test'
+  ...
+# Subtest: bounded live-loop harness cannot pay for a third request or execute a second tool
+ok 21 - bounded live-loop harness cannot pay for a third request or execute a second tool
+  ---
+  duration_ms: 129.188296
+  type: 'test'
+  ...
+# (node:2256) ExperimentalWarning: Module mocking is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# (node:2256) DeprecationWarning: mock.module(): options.namedExports is deprecated. Use options.exports instead.
+# Subtest: real Harness loop holds all content pending verification, then executes one tool and continues
+ok 22 - real Harness loop holds all content pending verification, then executes one tool and continues
+  ---
+  duration_ms: 101.329655
+  type: 'test'
+  ...
+# Subtest: real Harness executes zero tools for tampered-bytes
+ok 23 - real Harness executes zero tools for tampered-bytes
+  ---
+  duration_ms: 14.814933
+  type: 'test'
+  ...
+# Subtest: real Harness executes zero tools for bad-signature
+ok 24 - real Harness executes zero tools for bad-signature
+  ---
+  duration_ms: 19.436291
+  type: 'test'
+  ...
+# Subtest: real Harness executes zero tools for missing-signature
+ok 25 - real Harness executes zero tools for missing-signature
+  ---
+  duration_ms: 10.799581
+  type: 'test'
+  ...
+# Subtest: real Harness executes zero tools for gateway-only
+ok 26 - real Harness executes zero tools for gateway-only
+  ---
+  duration_ms: 12.591649
+  type: 'test'
+  ...
+# Subtest: real Harness executes zero tools for attestation-rejection
+ok 27 - real Harness executes zero tools for attestation-rejection
+  ---
+  duration_ms: 12.368731
+  type: 'test'
+  ...
+# Subtest: real Harness cancellation suppresses late verified tool output
+ok 28 - real Harness cancellation suppresses late verified tool output
+  ---
+  duration_ms: 27.49101
+  type: 'test'
+  ...
+# Subtest: production plugin and real Node SDK load without contacting a service
+ok 29 - production plugin and real Node SDK load without contacting a service
+  ---
+  duration_ms: 12.318435
+  type: 'test'
+  ...
+# Subtest: real SDK accepts signed bytes and rejects mutations, wrong signer and gateway claim
+ok 30 - real SDK accepts signed bytes and rejects mutations, wrong signer and gateway claim
+  ---
+  duration_ms: 50.807833
+  type: 'test'
+  ...
+# Subtest: test environment refuses network access
+ok 31 - test environment refuses network access
+  ---
+  duration_ms: 0.269766
+  type: 'test'
+  ...
+# Subtest: actual SDK provenance error retains failure.code and status through wrapper
+ok 32 - actual SDK provenance error retains failure.code and status through wrapper
+  ---
+  duration_ms: 1.877266
+  type: 'test'
+  ...
+# Subtest: actual SDK HTTP failure reports status without serializing its message
+ok 33 - actual SDK HTTP failure reports status without serializing its message
+  ---
+  duration_ms: 0.303469
+  type: 'test'
+  ...
+# Subtest: real Node SDK encrypts request, decrypts tool response and verifies original wire bytes
+ok 34 - real Node SDK encrypts request, decrypts tool response and verifies original wire bytes
+  ---
+  duration_ms: 128.359053
+  type: 'test'
+  ...
+# Subtest: gate plus real SDK transport: valid response releases one tool
+ok 35 - gate plus real SDK transport: valid response releases one tool
+  ---
+  duration_ms: 57.579886
+  type: 'test'
+  ...
+# Subtest: gate plus real SDK transport: bad-signature
+ok 36 - gate plus real SDK transport: bad-signature
+  ---
+  duration_ms: 54.037683
+  type: 'test'
+  ...
+# Subtest: gate plus real SDK transport: tampered-body
+ok 37 - gate plus real SDK transport: tampered-body
+  ---
+  duration_ms: 47.684913
+  type: 'test'
+  ...
+# Subtest: gate plus real SDK transport: missing-signature
+ok 38 - gate plus real SDK transport: missing-signature
+  ---
+  duration_ms: 38.54409
+  type: 'test'
+  ...
+# Subtest: gate plus real SDK transport: gateway-only
+ok 39 - gate plus real SDK transport: gateway-only
+  ---
+  duration_ms: 49.1355
+  type: 'test'
+  ...
+# Subtest: gate plus real SDK transport: nonce
+ok 40 - gate plus real SDK transport: nonce
+  ---
+  duration_ms: 11.242149
+  type: 'test'
+  ...
+# Subtest: gate plus real SDK transport: spki
+ok 41 - gate plus real SDK transport: spki
+  ---
+  duration_ms: 5.14115
+  type: 'test'
+  ...
+# Subtest: gate plus real SDK transport: deployment
+ok 42 - gate plus real SDK transport: deployment
+  ---
+  duration_ms: 7.844445
+  type: 'test'
+  ...
+1..42
+# tests 42
+# suites 0
+# pass 42
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 6207.307641

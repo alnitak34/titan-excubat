@@ -1,0 +1,310 @@
+TAP version 13
+# Subtest: bounded transport preserves exact bytes at cap and original pin/options
+ok 1 - bounded transport preserves exact bytes at cap and original pin/options
+  ---
+  duration_ms: 33.860767
+  type: 'test'
+  ...
+# Subtest: oversized chunked response rejects and cancels source (chunk=2)
+ok 2 - oversized chunked response rejects and cancels source (chunk=2)
+  ---
+  duration_ms: 1.399411
+  type: 'test'
+  ...
+# Subtest: oversized chunked response rejects and cancels source (chunk=5)
+ok 3 - oversized chunked response rejects and cancels source (chunk=5)
+  ---
+  duration_ms: 0.465552
+  type: 'test'
+  ...
+# Subtest: consumer cancellation propagates without buffering remaining body
+ok 4 - consumer cancellation propagates without buffering remaining body
+  ---
+  duration_ms: 0.469019
+  type: 'test'
+  ...
+# Subtest: transport errors stay errors; missing SDK seam fails closed
+ok 5 - transport errors stay errors; missing SDK seam fails closed
+  ---
+  duration_ms: 0.878886
+  type: 'test'
+  ...
+# Subtest: retains startup before many updates and chooses latest of each SDK action
+ok 6 - retains startup before many updates and chooses latest of each SDK action
+  ---
+  duration_ms: 1.84741
+  type: 'test'
+  ...
+# Subtest: omits arbitrary fields, unsafe paths and marks bounded service truncation
+ok 7 - omits arbitrary fields, unsafe paths and marks bounded service truncation
+  ---
+  duration_ms: 0.335559
+  type: 'test'
+  ...
+# Subtest: missing or empty actions remain explicitly absent
+ok 8 - missing or empty actions remain explicitly absent
+  ---
+  duration_ms: 0.168526
+  type: 'test'
+  ...
+# Subtest: sanitized SDK reason survives both error boundaries without retaining private data
+ok 9 - sanitized SDK reason survives both error boundaries without retaining private data
+  ---
+  duration_ms: 2.099693
+  type: 'test'
+  ...
+# Subtest: foreign error diagnostic properties cannot inject a snapshot
+ok 10 - foreign error diagnostic properties cannot inject a snapshot
+  ---
+  duration_ms: 0.249097
+  type: 'test'
+  ...
+# Subtest: no text or tool chunk escapes while verification is pending; positive control releases once
+ok 11 - no text or tool chunk escapes while verification is pending; positive control releases once
+  ---
+  duration_ms: 21.808191
+  type: 'test'
+  ...
+# Subtest: gateway-only emits zero chunks and sanitizes diagnostics
+ok 12 - gateway-only emits zero chunks and sanitizes diagnostics
+  ---
+  duration_ms: 1.583857
+  type: 'test'
+  ...
+# Subtest: missing verdict emits zero chunks and sanitizes diagnostics
+ok 13 - missing verdict emits zero chunks and sanitizes diagnostics
+  ---
+  duration_ms: 0.529602
+  type: 'test'
+  ...
+# Subtest: wrong response ID emits zero chunks and sanitizes diagnostics
+ok 14 - wrong response ID emits zero chunks and sanitizes diagnostics
+  ---
+  duration_ms: 0.679513
+  type: 'test'
+  ...
+# Subtest: verification rejection emits zero chunks and sanitizes diagnostics
+ok 15 - verification rejection emits zero chunks and sanitizes diagnostics
+  ---
+  duration_ms: 1.789653
+  type: 'test'
+  ...
+# Subtest: SDK preflight rejection produces no output and no response verification
+ok 16 - SDK preflight rejection produces no output and no response verification
+  ---
+  duration_ms: 0.809557
+  type: 'test'
+  ...
+# Subtest: cancel during create suppresses late success and reserves capacity until settled
+ok 17 - cancel during create suppresses late success and reserves capacity until settled
+  ---
+  duration_ms: 6.852876
+  type: 'test'
+  ...
+# Subtest: cancel during verify suppresses late success and reserves capacity until settled
+ok 18 - cancel during verify suppresses late success and reserves capacity until settled
+  ---
+  duration_ms: 2.244435
+  type: 'test'
+  ...
+# Subtest: already cancelled request never constructs client
+ok 19 - already cancelled request never constructs client
+  ---
+  duration_ms: 1.290337
+  type: 'test'
+  ...
+# Subtest: dispose prevents late verification and all future requests
+ok 20 - dispose prevents late verification and all future requests
+  ---
+  duration_ms: 1.910248
+  type: 'test'
+  ...
+# Subtest: deadline prevents late verification
+ok 21 - deadline prevents late verification
+  ---
+  duration_ms: 10.298571
+  type: 'test'
+  ...
+# Subtest: cancel between verified chunks prevents subsequent tool release
+ok 22 - cancel between verified chunks prevents subsequent tool release
+  ---
+  duration_ms: 0.674484
+  type: 'test'
+  ...
+# Subtest: consumer closes iterator and cache is cleared
+ok 23 - consumer closes iterator and cache is cleared
+  ---
+  duration_ms: 0.280856
+  type: 'test'
+  ...
+# Subtest: malformed later tool rejects whole response before any chunks
+ok 24 - malformed later tool rejects whole response before any chunks
+  ---
+  duration_ms: 0.889166
+  type: 'test'
+  ...
+# Subtest: undeclared tool rejects whole response before any chunks
+ok 25 - undeclared tool rejects whole response before any chunks
+  ---
+  duration_ms: 0.257152
+  type: 'test'
+  ...
+# Subtest: duplicate ID rejects whole response before any chunks
+ok 26 - duplicate ID rejects whole response before any chunks
+  ---
+  duration_ms: 0.43888
+  type: 'test'
+  ...
+# Subtest: truncated output rejects whole response before any chunks
+ok 27 - truncated output rejects whole response before any chunks
+  ---
+  duration_ms: 0.238817
+  type: 'test'
+  ...
+# Subtest: structured reasoning output rejects whole response before any chunks
+ok 28 - structured reasoning output rejects whole response before any chunks
+  ---
+  duration_ms: 0.238066
+  type: 'test'
+  ...
+# Subtest: invalid usage rejects whole response before any chunks
+ok 29 - invalid usage rejects whole response before any chunks
+  ---
+  duration_ms: 0.428062
+  type: 'test'
+  ...
+# Subtest: oversized response does not reach verification
+ok 30 - oversized response does not reach verification
+  ---
+  duration_ms: 0.267701
+  type: 'test'
+  ...
+# Subtest: oversized request and unsupported input do not contact SDK
+ok 31 - oversized request and unsupported input do not contact SDK
+  ---
+  duration_ms: 0.380913
+  type: 'test'
+  ...
+# Subtest: headers and abort signal arrive at fake SDK create seam
+ok 32 - headers and abort signal arrive at fake SDK create seam
+  ---
+  duration_ms: 0.302497
+  type: 'test'
+  ...
+# Subtest: tool result ID and raw arguments preserved for second request
+ok 33 - tool result ID and raw arguments preserved for second request
+  ---
+  duration_ms: 0.658834
+  type: 'test'
+  ...
+# Subtest: unmatched tool results and unrepresentable content order fail
+ok 34 - unmatched tool results and unrepresentable content order fail
+  ---
+  duration_ms: 0.23498
+  type: 'test'
+  ...
+# Subtest: deployment policy requires both approved measurements and exact model
+ok 35 - deployment policy requires both approved measurements and exact model
+  ---
+  duration_ms: 0.398607
+  type: 'test'
+  ...
+# Subtest: every model approval awaits provenance for that exact authenticated deployment
+ok 36 - every model approval awaits provenance for that exact authenticated deployment
+  ---
+  duration_ms: 1.43595
+  type: 'test'
+  ...
+# Subtest: same root measurements cannot bypass rejected changed manager provenance
+ok 37 - same root measurements cannot bypass rejected changed manager provenance
+  ---
+  duration_ms: 1.339418
+  type: 'test'
+  ...
+# Subtest: wrong measurements stop before any provenance lookup
+ok 38 - wrong measurements stop before any provenance lookup
+  ---
+  duration_ms: 0.684141
+  type: 'test'
+  ...
+# Subtest: gateway provenance is required and failures propagate
+ok 39 - gateway provenance is required and failures propagate
+  ---
+  duration_ms: 0.348983
+  type: 'test'
+  ...
+# Subtest: reasoning is a separate Harness block and survives next-turn serialization
+ok 40 - reasoning is a separate Harness block and survives next-turn serialization
+  ---
+  duration_ms: 2.766412
+  type: 'test'
+  ...
+# Subtest: ambiguous reasoning alias, malformed counters and unrepresentable order reject
+ok 41 - ambiguous reasoning alias, malformed counters and unrepresentable order reject
+  ---
+  duration_ms: 0.454342
+  type: 'test'
+  ...
+# Subtest: pending or rejected verification releases no reasoning or text
+ok 42 - pending or rejected verification releases no reasoning or text
+  ---
+  duration_ms: 1.427344
+  type: 'test'
+  ...
+# Subtest: uncoded TypeError preserves useful category and suppresses private message
+ok 43 - uncoded TypeError preserves useful category and suppresses private message
+  ---
+  duration_ms: 2.083493
+  type: 'test'
+  ...
+# Subtest: arbitrary names, codes, stacks, headers and payloads never escape
+ok 44 - arbitrary names, codes, stacks, headers and payloads never escape
+  ---
+  duration_ms: 0.369913
+  type: 'test'
+  ...
+# Subtest: nested network cause and HTTP status survive as bounded labels
+ok 45 - nested network cause and HTTP status survive as bounded labels
+  ---
+  duration_ms: 0.407543
+  type: 'test'
+  ...
+# Subtest: cycles and long cause chains are bounded
+ok 46 - cycles and long cause chains are bounded
+  ---
+  duration_ms: 0.291496
+  type: 'test'
+  ...
+# Subtest: accessor properties are never invoked
+ok 47 - accessor properties are never invoked
+  ---
+  duration_ms: 0.196849
+  type: 'test'
+  ...
+# Subtest: non-error thrown values still yield explicit classification
+ok 48 - non-error thrown values still yield explicit classification
+  ---
+  duration_ms: 0.189735
+  type: 'test'
+  ...
+# Subtest: SDK failure envelope preserves code and HTTP status without private details
+ok 49 - SDK failure envelope preserves code and HTTP status without private details
+  ---
+  duration_ms: 0.231253
+  type: 'test'
+  ...
+# Subtest: only fixed deployment-image reasons are emitted; arbitrary details stay private
+ok 50 - only fixed deployment-image reasons are emitted; arbitrary details stay private
+  ---
+  duration_ms: 0.220643
+  type: 'test'
+  ...
+1..50
+# tests 50
+# suites 0
+# pass 50
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 597.313314

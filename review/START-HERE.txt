@@ -1,0 +1,79 @@
+TITAN EXCUBAT — REVIEWER EVIDENCE PACK
+Prepared 2026-11-10. Local release draft, not yet published.
+
+CLAIM TO EVALUATE
+An experimental NEAR AI provider for DeepSeek Harness that withholds model
+content and tool-call chunks until its configured verification checks pass.
+It is not a general agent firewall or a tool-permission engine.
+
+START WITH THE STRONGEST TEST
+In the source package's test/integration/combined-loop.test.mjs, compare:
+- pending: zero content/tool execution before the verdict; after approval one
+  harmless tool executes and its result is encrypted into the following turn;
+- tampered-body / bad-signature / missing-signature / gateway-only: zero tools;
+- tool-denied / approval-unavailable: a cryptographically valid response still
+  cannot override the configured host permission boundary.
+Evidence: logs/integration.tap, tests 1, 5-10. These are recorded passing tests,
+not tests executed by opening this pack. Source reference:
+https://github.com/alnitak34/near-agent-verification-lab/blob/f3657c94202770c1d1d80a5909e1a4b9bab9a53b/test/integration/combined-loop.test.mjs
+The source-run URL is private. The same runtime/test code is included in this package; see ../test/integration/combined-loop.test.mjs. Public repository publication remains pending.
+
+WHAT IS REAL AND WHAT IS CONTROLLED
+Actual Harness services, production adapter and SDK encryption/signature code
+execute in the combined fixtures. Network/TLS I/O, hardware quote checks and
+provenance-helper verdicts are controlled fixtures. These tests do not establish
+live TEE validation, production availability, exact model identity or safety of
+model-generated actions. See the fixture setup and mocks in the source above.
+
+EXECUTED RECORD
+https://github.com/alnitak34/near-agent-verification-lab/actions/runs/42758734014
+Commit: f3657c94202770c1d1d80a5909e1a4b9bab9a53b
+50 unit tests and 42 integration tests passed; zero failed, cancelled or skipped.
+Sources: logs/unit.tap and logs/integration.tap.
+The 38 source-candidate files matched their manifest before commit. This pack's
+SOURCE-MANIFEST.json preserves that manifest. Do not equate a manifest with a
+signed independent attestation of test execution.
+
+ARTIFACT INTEGRITY
+Artifact ID: 13736627750
+ZIP SHA256, compared with the digest displayed by GitHub:
+c19102aaad0cfc1a8a4c5ceef257eb6a2d65bafae527b90d651f65531f33857a
+Original ZIP is included, unchanged. Its package-lock.json matches the source
+candidate: e380ea95c9e78e21f49fd9a473cf999b7b7ea91caa7de8ddd298f3f62a8daf96.
+These hashes establish byte identity against the recorded values, not author
+identity or an independently signed hardware result.
+
+REPRODUCE
+1. Without installation or a key, in the source folder:
+   node scripts/demo.mjs
+   node --test test/*.test.mjs
+   This demo uses a simulated SDK and counts chunks, not executed tools.
+2. In an approved separate environment where installing packages is permitted:
+   npm ci --ignore-scripts --no-audit --no-fund
+   npm run test:integration
+   Installation needs network access. The test process uses a no-network guard.
+   Do not run live inference to reproduce the controlled tests.
+
+SECURITY DISCLOSURE
+The 2026-11-10 npm audit reports zero critical/high/moderate entries and three
+low package entries for one underlying Elliptic advisory. It remains unresolved;
+no patched version was listed. Source: dependency-audit.json and
+https://github.com/advisories/GHSA-848j-6mx2-7j84
+A zero-count result for other severities is not a security certification.
+GitHub also warned about pinned actions targeting deprecated Node 20; the run
+used forced Node 24 for those actions and succeeded. The TAP logs retain module
+mocking warnings. These warnings have not been silently removed.
+
+ORIGINALITY AND ATTRIBUTION
+The public integration proposal belongs to think-in-universe, not this project:
+https://github.com/nearai/inference-sdk/issues/108
+Our implementation adds the release boundary, protocol translation, lifecycle
+controls, transport limit, diagnostics and tests. SDK cryptography remains the
+SDK authors' work. See source NOTICE.md.
+
+NOT VERIFIED
+- Adoption or endorsement by NEAR, Harness maintainers or other developers.
+- Comparative superiority over a generic endpoint or competing integrations.
+- Reliability from repeated live measurements or production security clearance.
+- Root causes of the earlier live second-turn/provenance failures.
+- Public access to the final repository. MIT has now been applied; see ../LICENSE.

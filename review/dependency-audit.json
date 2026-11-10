@@ -1,0 +1,84 @@
+{
+  "auditReportVersion": 2,
+  "vulnerabilities": {
+    "@nearai/inference-sdk": {
+      "name": "@nearai/inference-sdk",
+      "severity": "low",
+      "isDirect": true,
+      "via": [
+        "@phala/dcap-qvl"
+      ],
+      "effects": [],
+      "range": "*",
+      "nodes": [
+        "node_modules/@nearai/inference-sdk"
+      ],
+      "fixAvailable": false
+    },
+    "@phala/dcap-qvl": {
+      "name": "@phala/dcap-qvl",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        "elliptic"
+      ],
+      "effects": [
+        "@nearai/inference-sdk"
+      ],
+      "range": ">=0.2.1-beta.1",
+      "nodes": [
+        "node_modules/@phala/dcap-qvl"
+      ],
+      "fixAvailable": false
+    },
+    "elliptic": {
+      "name": "elliptic",
+      "severity": "low",
+      "isDirect": false,
+      "via": [
+        {
+          "source": 1112030,
+          "name": "elliptic",
+          "dependency": "elliptic",
+          "title": "Elliptic Uses a Cryptographic Primitive with a Risky Implementation",
+          "url": "https://github.com/advisories/GHSA-848j-6mx2-7j84",
+          "severity": "low",
+          "cwe": [
+            "CWE-1240"
+          ],
+          "cvss": {
+            "score": 5.6,
+            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:L/I:L/A:L"
+          },
+          "range": "<=6.6.1"
+        }
+      ],
+      "effects": [
+        "@phala/dcap-qvl"
+      ],
+      "range": "*",
+      "nodes": [
+        "node_modules/elliptic"
+      ],
+      "fixAvailable": false
+    }
+  },
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 3,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 3
+    },
+    "dependencies": {
+      "prod": 74,
+      "dev": 11,
+      "optional": 0,
+      "peer": 4,
+      "peerOptional": 0,
+      "total": 85
+    }
+  }
+}

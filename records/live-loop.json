@@ -1,0 +1,11 @@
+{
+  "source": "https://github.com/alnitak34/near-agent-verification-lab/actions/runs/42605913021/job/129121752100",
+  "commit": "121f47b06aa5810140b383653683f1feafb5607b",
+  "status": "VERIFIED_HARNESS_TOOL_LOOP_COMPLETE",
+  "adapterCalls": 2,
+  "executedTools": 1,
+  "retryCount": 0,
+  "toolResultReplayed": true,
+  "finalReceiptMatched": true,
+  "recordType": "Historical summary; not a signed receipt. Source run may require private access."
+}

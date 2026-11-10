@@ -1,0 +1,9 @@
+node_modules/
+.env
+.env.*
+!.env.example
+coverage/
+evidence/
+*.tgz
+# Reference sources are local reading material, not part of our package.
+research/upstream/

@@ -1,0 +1,42 @@
+TITAN EXCUBAT — DEMO SEQUENCE (English narration)
+Draft for recording; no video has been recorded or published by this step.
+
+1. THE BOUNDARY
+Narration: "An agent can turn model output into an action. EXCUBAT holds that
+output until the configured NEAR AI verification checks pass."
+Show: src/gate.mjs, verifyResponse followed by same-ID provider_tee requirement.
+
+2. THE POSITIVE CONTROL
+Narration: "In this recorded integration test, actual Harness and SDK code wait
+for verification, execute one harmless tool, and encrypt the next turn."
+Show: integration.tap test 1 and the matching source assertions.
+On-screen label: RECORDED INTEGRATION / CONTROLLED TRANSPORT AND ATTESTATION.
+
+3. THE FAILURE
+Narration: "With a changed response or an invalid signature, the tested path
+executes zero tools."
+Show: integration.tap tests 7 and 8; source asserts tools === 0.
+Do not call this a live attack against NEAR or a generic-provider comparison.
+
+4. SIGNATURE IS NOT PERMISSION
+Narration: "Even valid signed output cannot override the host's explicit deny
+policy in our test. Verification and permission are separate decisions."
+Show: integration.tap test 5 and corresponding tools/pre-execute deny policy.
+
+5. LET THE REVIEWER CHECK
+Narration: "The source, pinned dependencies and test records are available for
+inspection. Cryptography comes from the NEAR AI SDK; our contribution is the
+integration boundary and its tested failure behavior."
+Use this sentence only after public links have been published and checked.
+Until then say: "Prepared locally for reviewer access; publication pending."
+Show: run, commit, artifact digest and dependency disclosure in START-HERE.txt.
+
+LOCAL INTERACTIVE ALTERNATIVE
+Run node scripts/demo.mjs in the source directory. Always display:
+SIMULATED SDK / NO LIVE INFERENCE / TOOL-CALL CHUNKS, NOT TOOL EXECUTION.
+Do not cut away these labels when recording.
+
+WHAT NOT TO CLAIM
+No 'unhackable', 'protects every agent', 'proves the exact model', 'first ever',
+'NEAR endorsed', guaranteed prize or universal prevention of unsafe actions.
+Sources and unverified limits are listed in START-HERE.txt.

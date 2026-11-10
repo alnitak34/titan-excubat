@@ -1,0 +1,30 @@
+[
+  {
+    "path": "DEMO-SEQUENCE.txt",
+    "sha256": "9b8302a1d2cd171aa841e35e4971e6902c6797710477f1855c7b0c1b37833821"
+  },
+  {
+    "path": "SOURCE-MANIFEST.json",
+    "sha256": "bd04e5288e0f2b01babb71e596fc3ba5badaed113aaf1dbbbe4ea7c20de47556"
+  },
+  {
+    "path": "START-HERE.txt",
+    "sha256": "6f90aa38ce53ca533e9253029a499c02f2e41e327f7f776f65ccbc2afc8c499f"
+  },
+  {
+    "path": "dependency-audit.json",
+    "sha256": "524ec8ede173e8015e929ce4941cb49c9715757588be03f7ecb6f53d6e315bd5"
+  },
+  {
+    "path": "logs/integration.tap",
+    "sha256": "5d903d1bd5188121f14f27ad7af71b9c230d34273c8121a244980471e702cc24"
+  },
+  {
+    "path": "logs/unit.tap",
+    "sha256": "42b83e7dca31ea5810c7237d1852b21db377c69498d6cb95ce36ec34dd79cc8e"
+  },
+  {
+    "path": "verified-provider-evidence.zip",
+    "sha256": "c19102aaad0cfc1a8a4c5ceef257eb6a2d65bafae527b90d651f65531f33857a"
+  }
+]

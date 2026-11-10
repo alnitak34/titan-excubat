@@ -1,0 +1,36 @@
+TITAN EXCUBAT — reviewer entry
+
+WHAT TO CHECK FIRST
+Read review/START-HERE.txt, then inspect test/integration/combined-loop.test.mjs.
+The positive case waits for verification, executes one harmless tool and encrypts
+its next turn. Invalid signatures/body changes block tools. A valid signature
+still cannot override the host's explicit deny policy in the tested fixture.
+
+REPRODUCE LOCALLY WITHOUT INSTALLING PACKAGES
+Using an existing Node >=24.22.1 from this directory:
+  node scripts/demo.mjs
+  node --test test/*.test.mjs
+The demo's SDK is simulated; it counts chunks, not tool-body executions.
+
+RECORDED INTEGRATION RESULT
+Run 42758734014 at f3657c94202770c1d1d80a5909e1a4b9bab9a53b:
+50 unit tests and 42 integration tests passed, with zero failures or skips.
+Read review/logs/unit.tap and review/logs/integration.tap. Original artifact ZIP
+and its digest are in review/. Actual Harness/SDK code ran with controlled
+network, hardware-quote and provenance fixtures. This is not a live TEE audit.
+The tested source snapshot is preserved in review/SOURCE-MANIFEST.json.
+Runtime and test files in this release are unchanged; later edits add MIT,
+root package-license metadata, documentation and evidence. See RELEASE-NOTES.txt.
+
+LIVE RESULT AND LIMITS
+records/live-loop.json summarizes a separate successful live run: two adapter
+calls, one harmless tool, matching final receipt. It is a historical summary,
+not an independently signed receipt. Prior live failures remain unexplained.
+Signature validity is not tool authorization, truth or exact model identity.
+Local processes see plaintext. Dependency advisory GHSA-848j-6mx2-7j84 remains;
+see review/dependency-audit.json. No production security clearance is claimed.
+
+ATTRIBUTION AND LICENSE
+MIT, copyright 2026 alnitak34. Read LICENSE and NOTICE.md.
+Original public integration proposal: think-in-universe, SDK issue #108.
+Cryptography is provided by the NEAR AI SDK, not invented by this project.

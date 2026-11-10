@@ -1,0 +1,194 @@
+[
+  {
+    "path": ".github/workflows/verified-provider.yml",
+    "sha256": "01f640a4fbf52f989b8e29acedf18f93c58bdf8dc8e7c85dc3119b09570a7894"
+  },
+  {
+    "path": ".gitignore",
+    "sha256": "4c0b25ccc44a5b626193e7dc4c2ee51ffc45bd1273aaf4005b088f365944d0bf"
+  },
+  {
+    "path": "DEMO.txt",
+    "sha256": "f7fbf76e6221ecc0e8935e40d7cd93773b3131285dcf4c022c15bc26af56434c"
+  },
+  {
+    "path": "JUDGES.txt",
+    "sha256": "c5f107f834d3826e923453efb17ac242b1405d67fdc4f3e5d012298a561f343c"
+  },
+  {
+    "path": "LICENSE",
+    "sha256": "71a5b1f830de9a3ef918a777e9eca9989358d8ed4bee90e5c5eb77d371e4b812"
+  },
+  {
+    "path": "NOTICE.md",
+    "sha256": "a70724376d41b4f9e9bea09b5537462b9c75ba37cf7bbe049523a37fbd5e49ba"
+  },
+  {
+    "path": "README.md",
+    "sha256": "09f4a111459431cb3b454b207467cf6ea873ff64d63b66d19f1ccd591cc31c1a"
+  },
+  {
+    "path": "RELEASE-NOTES.txt",
+    "sha256": "a0a8d5e2e918b744daf5cf25148f7ee6b9905aebce59fc8cd9155fb877c79f55"
+  },
+  {
+    "path": "package-lock.json",
+    "sha256": "37961a02c3e5666ddb633316c715e83681b2eeb54528c370e373211b7db39beb"
+  },
+  {
+    "path": "package.json",
+    "sha256": "0c943f0a6c09e96d80aee13dde67aa85cb0f4c6198770f85d9d110132d9d7f00"
+  },
+  {
+    "path": "records/live-loop.json",
+    "sha256": "e7a459456154811b4f20731fb20617be01dfe11931183d58f2f67363f0ac1840"
+  },
+  {
+    "path": "review/BUNDLE-MANIFEST.json",
+    "sha256": "b92d3f7316ec3042f0b644ef7615fa469a1590497da0062b1c71fb4b8ce1d8f8"
+  },
+  {
+    "path": "review/DEMO-SEQUENCE.txt",
+    "sha256": "9b8302a1d2cd171aa841e35e4971e6902c6797710477f1855c7b0c1b37833821"
+  },
+  {
+    "path": "review/SOURCE-MANIFEST.json",
+    "sha256": "bd04e5288e0f2b01babb71e596fc3ba5badaed113aaf1dbbbe4ea7c20de47556"
+  },
+  {
+    "path": "review/START-HERE.txt",
+    "sha256": "6f90aa38ce53ca533e9253029a499c02f2e41e327f7f776f65ccbc2afc8c499f"
+  },
+  {
+    "path": "review/dependency-audit.json",
+    "sha256": "524ec8ede173e8015e929ce4941cb49c9715757588be03f7ecb6f53d6e315bd5"
+  },
+  {
+    "path": "review/logs/integration.tap",
+    "sha256": "5d903d1bd5188121f14f27ad7af71b9c230d34273c8121a244980471e702cc24"
+  },
+  {
+    "path": "review/logs/unit.tap",
+    "sha256": "42b83e7dca31ea5810c7237d1852b21db377c69498d6cb95ce36ec34dd79cc8e"
+  },
+  {
+    "path": "review/verified-provider-evidence.zip",
+    "sha256": "c19102aaad0cfc1a8a4c5ceef257eb6a2d65bafae527b90d651f65531f33857a"
+  },
+  {
+    "path": "scripts/compose-diagnostic.mjs",
+    "sha256": "48d718c3d2010584dd35f0a8139f6ffc613418a8f6254490fdb6d8fee12bac08"
+  },
+  {
+    "path": "scripts/demo.mjs",
+    "sha256": "993317d76455091a3846e1da6ba496d4031079209f30f59eda89045130935906"
+  },
+  {
+    "path": "scripts/harmless-loop.mjs",
+    "sha256": "74a06f902ce7e769711a989a71842819ea90aff6aff3a1b8b760f89105363b72"
+  },
+  {
+    "path": "scripts/safe-diagnostic.mjs",
+    "sha256": "9b5c7210a5e17823772a127b6fefd5d00bd687bf8486c4658c04e2fe0a400aec"
+  },
+  {
+    "path": "src/bounded-transport.mjs",
+    "sha256": "615c39704de0c689f4ea67a98ba8299925bef94c77284d2223ca4ffa996194fb"
+  },
+  {
+    "path": "src/error-diagnostic.mjs",
+    "sha256": "157c32adc4d01c73c6f3c63a291b5f360ba3b87ccef1a1f45b8a179e30650201"
+  },
+  {
+    "path": "src/gate.mjs",
+    "sha256": "4f4869eff68f3a38c12f8cfffcf31fe6c7959c4a7e96a070d9d310921d42043a"
+  },
+  {
+    "path": "src/plugin.mjs",
+    "sha256": "6c050b610ae6ebfeb60b3829ac022883aac91f42d53e32c2826cd9d66957e224"
+  },
+  {
+    "path": "src/policy.mjs",
+    "sha256": "de70903c985d0958baf3cf3a9319ecf12017a0cd06fca74798e39ab8e0c4601f"
+  },
+  {
+    "path": "src/protocol.mjs",
+    "sha256": "6b26f73b72a796a1f03a9224115a45b8b09d8c881d41de7eaca5219b16b2f98b"
+  },
+  {
+    "path": "src/provenance-policy.mjs",
+    "sha256": "6339208e3cce2b9a86b848d6865edf9be2ba689744e297be293efc54995e4b21"
+  },
+  {
+    "path": "src/safe-diagnostic.mjs",
+    "sha256": "fae87189e4c0f05375adf0011cdcde2185778354725fc797709fcc5ff7c09f30"
+  },
+  {
+    "path": "src/sdk-failure-codes.json",
+    "sha256": "95f6a3268e5483f7bacba97bf2197fa54b38476c0264facc24263847533fe831"
+  },
+  {
+    "path": "test/bounded-transport.test.mjs",
+    "sha256": "b3cdaf0e7f2b4ef8ffeaed675b2bc80e1b9b59177b8438e1d56c4a1940e36831"
+  },
+  {
+    "path": "test/compose-diagnostic.test.mjs",
+    "sha256": "80c6da4eb5e4ce7ef2053cca708da2d92d7918756f59ad0ffbae7d8fae7c0b5d"
+  },
+  {
+    "path": "test/error-diagnostic.test.mjs",
+    "sha256": "8f9ecefa596fc7aee7f89225483e8d3f2a55135f98a0d555dcb23e7cfb854f47"
+  },
+  {
+    "path": "test/gate.test.mjs",
+    "sha256": "7061667fe9692395c42a38a78cc08a146ba00febd925287bbe666f6c644d06d5"
+  },
+  {
+    "path": "test/integration/combined-loop.test.mjs",
+    "sha256": "955e4d1cb5c22fa02c99001145f963e363ccec49623edc29ef1748b6509c1f44"
+  },
+  {
+    "path": "test/integration/harmless-loop.test.mjs",
+    "sha256": "99fcb25462cbb3795179d785b52279354dafa9e8266d60c71c1e48e7000edac1"
+  },
+  {
+    "path": "test/integration/harness-loop.test.mjs",
+    "sha256": "710f6f350b3a9efd1f440f2e5b3b9ab6621ba55db9814c29aa64ba0f048a3bc5"
+  },
+  {
+    "path": "test/integration/no-network.mjs",
+    "sha256": "a528f859b78eb28bc95a3238a3ed586e6e465c8535798146eb9a74c5199e5fc4"
+  },
+  {
+    "path": "test/integration/sdk-contract.test.mjs",
+    "sha256": "b07e81fdbfd8ed2c51fbbde47a8438425652e3f1e7a49cc6f731411698bd5d37"
+  },
+  {
+    "path": "test/integration/sdk-diagnostics.test.mjs",
+    "sha256": "ea2d0955ee1e4cf17b235319e02a1439b8c61a5c64115b0c97cc33e28f5f93f3"
+  },
+  {
+    "path": "test/integration/sdk-transport.test.mjs",
+    "sha256": "1ec9accb9a7813b7cf782fe3ee036bb9f06d89f5b5b0123d95bdbce61d94995b"
+  },
+  {
+    "path": "test/integration/signed-fixture.mjs",
+    "sha256": "138515d317ce6c60c604c1fee600bbe74aedf98e57eb0b7f88ecc3dcac5a3ba0"
+  },
+  {
+    "path": "test/integration/transport-fixture.mjs",
+    "sha256": "527d108d25a94f97efd57cfb8aa8726cc5afbd7028a63f0f4b7fc19d3c9b9f86"
+  },
+  {
+    "path": "test/provenance-policy.test.mjs",
+    "sha256": "64d631ba848c7542b256a7722261a3016330b3b04a580fa7f2b24c8f08715f4e"
+  },
+  {
+    "path": "test/reasoning.test.mjs",
+    "sha256": "54e8131c286f4303e225d2db19b12b13f675c107e8b344f7e5189d53bf58be53"
+  },
+  {
+    "path": "test/safe-diagnostic.test.mjs",
+    "sha256": "f00d8825ddb57d49267e2d84c28f486da6a5ee324afc1c20ce72235a7cb2685c"
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "name": "dsh-llm-nearai-verified",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Experimental verified NEAR AI provider for DeepSeek Harness",
+  "exports": {
+    ".": "./src/plugin.mjs"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "NOTICE.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=24.22.1"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "test:integration": "node --import ./test/integration/no-network.mjs --experimental-test-module-mocks --test --test-timeout=15000 --test-concurrency=1 test/integration/*.test.mjs"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-llm": "0.2.2-alpha.3",
+    "@deepseek-ai/schemastery": "3.18.6-alpha.2",
+    "@deepseek-ai/cordis": "4.0.6-alpha.2"
+  },
+  "dependencies": {
+    "@nearai/inference-sdk": "0.2.1"
+  },
+  "overrides": {
+    "zod": "4.6.6"
+  },
+  "devDependencies": {
+    "@deepseek-ai/dsh-agent": "0.2.2-alpha.3",
+    "@deepseek-ai/dsh-agent-loop": "0.2.2-alpha.3",
+    "@deepseek-ai/dsh-session": "0.2.2-alpha.3",
+    "@deepseek-ai/dsh-session-projection": "0.2.2-alpha.3",
+    "@deepseek-ai/dsh-system-prompt": "0.2.2-alpha.3",
+    "@deepseek-ai/dsh-tools": "0.2.2-alpha.3",
+    "@deepseek-ai/dsh-tool-executor-native": "0.2.2-alpha.3",
+    "@deepseek-ai/dsh-tool-testkit": "0.2.2-alpha.3"
+  },
+  "license": "MIT"
+}

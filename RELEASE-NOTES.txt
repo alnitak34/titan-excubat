@@ -1,0 +1,12 @@
+Publication preparation, 2026-11-10. Not yet published.
+
+Validated base: private GitHub run 42758734014, commit
+f3657c94202770c1d1d80a5909e1a4b9bab9a53b.
+All src/ and test/ files are byte-identical to the validated candidate.
+Dependency graph is unchanged; package-lock root metadata now declares MIT.
+Later changes: LICENSE, package license/file metadata, attribution, reviewer
+instructions, included historical logs and evidence, regenerated manifests.
+No claim that the original run tested these later documentation edits.
+The original artifact ZIP and source manifest are retained unchanged in review/.
+Full private Git history, research notes, credentials and billing are excluded.
+No additional inference or installation was used for this assembly.
