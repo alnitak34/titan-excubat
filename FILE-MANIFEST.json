@@ -9,11 +9,11 @@
   },
   {
     "path": "DEMO.txt",
-    "sha256": "f7fbf76e6221ecc0e8935e40d7cd93773b3131285dcf4c022c15bc26af56434c"
+    "sha256": "405c8877edeaf472c0ab329475b8025c4e37740780d3a87b97d0ec9da943c3de"
   },
   {
     "path": "JUDGES.txt",
-    "sha256": "c5f107f834d3826e923453efb17ac242b1405d67fdc4f3e5d012298a561f343c"
+    "sha256": "cf7c194180b86567934d1cf971209ad70112d467b111a8d561b990a4a3c3ebfb"
   },
   {
     "path": "LICENSE",
@@ -29,7 +29,7 @@
   },
   {
     "path": "RELEASE-NOTES.txt",
-    "sha256": "13fd74f6803986755036aaf9410e5b0ddd5a7d484e7005f94ca365da557216c4"
+    "sha256": "fcd30d317d269961ecbb67d8ef4f373b1acd7f0df50dc275e2d1e768b89e5289"
   },
   {
     "path": "package-lock.json",
@@ -57,7 +57,7 @@
   },
   {
     "path": "review/START-HERE.txt",
-    "sha256": "8cb6f8b9bcc6be1cec15d44fe7849385e923ab0c1032a5d697c722c9b702a8bd"
+    "sha256": "7d0a30040b14afb130d4dd25e6a03593ac1fb930fa8c9fc2fb5f7393b2348e0a"
   },
   {
     "path": "review/dependency-audit.json",

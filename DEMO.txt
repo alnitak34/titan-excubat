@@ -1,49 +1,35 @@
-DEMO PRIVADA — NEAR AI verified provider for DeepSeek Harness
+TITAN EXCUBAT — demo y evidencia pública
 
-Ejecutar desde la carpeta del proyecto, con Node ya disponible:
+EJECUTAR SIN INSTALAR PAQUETES
+Con Node >=24.22.1 ya disponible, desde esta carpeta:
   node scripts/demo.mjs
 
-No requiere npm install ni API key. No consulta NEAR y no consume crédito de inferencia.
-La demo combina evidencia histórica y una prueba local. Ambas se identifican en pantalla.
+El código real de la compuerta utiliza un SDK simulado en esta demo.
+No consulta NEAR, no verifica criptografía real y no ejecuta herramientas.
+Mientras espera el veredicto: cero fragmentos liberados. Con provider_tee
+simulado: ocho fragmentos, uno de llamada a herramienta. Solo gateway o rechazo:
+cero fragmentos. La evidencia histórica se etiqueta por separado.
 
-GUION PARA PRESENTAR
+COMPROBAR LA INTEGRACIÓN
+Ejecución pública sobre 7e5317df647308c3c4e1037404d8da0c1c4b0115:
+https://github.com/alnitak34/titan-excubat/actions/runs/42861197288
+52 pruebas unitarias y 48 de integración aprobadas, cero fallos/omitidas.
+Registros: review/logs/security-unit.tap y security-integration.tap.
 
-Problema:
-Un agente puede convertir una respuesta de un modelo en una llamada a herramienta.
-Nuestro adaptador exige completar las verificaciones configuradas antes de entregar
-texto o llamadas a herramienta al bucle de Harness.
+Harness y SDK reales se ejecutan con transporte y atestación controlados.
+Los seis casos de revisión de procedencia usan la comprobación de política
+real del SDK tras una frontera Sigstore/TUF simulada. No son atestaciones
+auténticas del despliegue remoto. Consulta review/SECURITY-DISPOSITION.md.
 
-Mostrar:
-1. El enlace de la ejecución real 42605913021. Dos respuestas verificadas, una
-   herramienta inocua y confirmación del resultado, sin reintentos.
-2. La prueba local: mientras no llega el veredicto, salen cero chunks.
-3. La prueba local con firma solo del gateway o verificación rechazada:
-   se bloquea toda salida. El SDK de estos escenarios es simulado; no llamarlos
-   ataques ejecutados contra NEAR ni pruebas criptográficas.
+CONTRIBUCIÓN Y LÍMITES
+El adaptador retiene texto y llamadas hasta completar los controles configurados.
+Exige una revisión concreta del proxy, traduce el protocolo de Harness y acota
+ciclo de vida, transporte y diagnósticos. La criptografía pertenece al SDK NEAR.
+Una firma válida no autoriza acciones ni demuestra que el software sea seguro.
+El anfitrión debe validar argumentos y permisos. El proceso local ve texto plano.
+La comprobación del despliegue actual y la corrección completa del incidente
+siguen sin establecerse. No se afirma prevención del incidente ni seguridad de
+producción. El registro live-loop.json es histórico, no una prueba actual.
 
-Contribución:
-Integración de verificación en el límite entre el modelo y el agente, más
-diagnósticos saneados que conservan el motivo del rechazo sin exponer prompts,
-credenciales ni respuestas. La verificación criptográfica se delega al SDK NEAR.
-No presentamos su criptografía como creación nuestra.
-
-Límites que deben decirse:
-- Una ejecución en vivo exitosa; no prueba de disponibilidad ni auditoría completa.
-- Fallos históricos aún sin explicación. No afirmar que están resueltos.
-- La verificación de procedencia no valida que la acción propuesta sea segura.
-- El host local maneja texto plano. Permisos y validación de herramientas siguen
-  siendo responsabilidad del host.
-- La lista de despliegues permitidos sigue siendo explícita; no se amplía sola.
-
-FUENTES
-Ejecución real:
-https://github.com/alnitak34/near-agent-verification-lab/actions/runs/42605913021/job/129121752100
-Regresión aislada (50 unidades / 42 integración, transportes controlados):
-https://github.com/alnitak34/near-agent-verification-lab/actions/runs/42566017188/job/128992586404
-Diseño público original, que se acredita en NOTICE.md:
-https://github.com/nearai/inference-sdk/issues/108
-
-ANTES DE UNA PRESENTACIÓN EXTERNA
-El repositorio es privado: los enlaces no garantizan acceso a los jueces.
-Preparar y revisar un paquete compartible y verificar las reglas vigentes de
-entrega. Este guion no cambia la visibilidad ni realiza una inscripción.
+Código público: https://github.com/alnitak34/titan-excubat
+Diseño original acreditado: https://github.com/nearai/inference-sdk/issues/108

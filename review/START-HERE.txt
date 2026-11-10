@@ -6,6 +6,16 @@ An experimental NEAR AI provider for DeepSeek Harness that withholds model
 content and tool-call chunks until its configured verification checks pass.
 It is not a general agent firewall or a tool-permission engine.
 
+CURRENT POLICY VALIDATION — PUBLIC RUN
+https://github.com/alnitak34/titan-excubat/actions/runs/42861197288
+Commit: 7e5317df647308c3c4e1037404d8da0c1c4b0115
+52 unit tests and 48 integration tests passed; zero failures or skips.
+Exported logs: logs/security-unit.tap and logs/security-integration.tap.
+This run covers the exact inference-proxy source requirement:
+7924418b5eacb396a12ada208b0f2f0c82ec6d1d, in addition to official repository and
+workflow. It rejects other revisions until reviewed. See SECURITY-DISPOSITION.md
+for the official correction and the limits of this policy.
+
 START WITH THE STRONGEST TEST
 In the source package's test/integration/combined-loop.test.mjs, compare:
 - pending: zero content/tool execution before the verdict; after approval one
@@ -13,10 +23,12 @@ In the source package's test/integration/combined-loop.test.mjs, compare:
 - tampered-body / bad-signature / missing-signature / gateway-only: zero tools;
 - tool-denied / approval-unavailable: a cryptographically valid response still
   cannot override the configured host permission boundary.
-Evidence: logs/integration.tap, tests 1, 5-10. These are recorded passing tests,
-not tests executed by opening this pack. Source reference:
-https://github.com/alnitak34/near-agent-verification-lab/blob/f3657c94202770c1d1d80a5909e1a4b9bab9a53b/test/integration/combined-loop.test.mjs
-The source-run URL is private. The same runtime/test code is included in this package; see ../test/integration/combined-loop.test.mjs. This package is now publicly available.
+Evidence: logs/security-integration.tap from the public run above. These are
+recorded passing tests, not tests executed by opening this pack. Source:
+https://github.com/alnitak34/titan-excubat/blob/7e5317df647308c3c4e1037404d8da0c1c4b0115/test/integration/combined-loop.test.mjs
+Also inspect ../test/integration/sdk-provenance-commit.test.mjs: six cases call
+the actual SDK image verifier for approved/different source revisions and
+certificate/statement mismatch, using both SLSA v1 and v0.2 fixtures.
 
 WHAT IS REAL AND WHAT IS CONTROLLED
 Actual Harness services, production adapter and SDK encryption/signature code
@@ -24,22 +36,30 @@ execute in the combined fixtures. Network/TLS I/O, hardware quote checks and
 provenance-helper verdicts are controlled fixtures. These tests do not establish
 live TEE validation, production availability, exact model identity or safety of
 model-generated actions. See the fixture setup and mocks in the source above.
+The six source-policy cases separately exercise actual SDK parsing and policy
+checks, while Sigstore signatures, certificate parsing and TUF trust are
+explicitly simulated. They do not verify genuine signed attestations.
 
-EXECUTED RECORD
+HISTORICAL BASELINE — PRESERVED, NOT CURRENT POLICY VALIDATION
 https://github.com/alnitak34/near-agent-verification-lab/actions/runs/42758734014
 Commit: f3657c94202770c1d1d80a5909e1a4b9bab9a53b
 50 unit tests and 42 integration tests passed; zero failed, cancelled or skipped.
 Sources: logs/unit.tap and logs/integration.tap.
+These are the earlier 50/42 baseline logs. They predate the exact source-commit
+requirement and the six new SDK cases; do not cite them for the current policy.
 The 38 source-candidate files matched their manifest before commit. This pack's
 SOURCE-MANIFEST.json preserves that manifest. Do not equate a manifest with a
 signed independent attestation of test execution.
 
-ARTIFACT INTEGRITY
+HISTORICAL ARTIFACT INTEGRITY
 Artifact ID: 13736627750
 ZIP SHA256, compared with the digest displayed by GitHub:
 c19102aaad0cfc1a8a4c5ceef257eb6a2d65bafae527b90d651f65531f33857a
 Original ZIP is included, unchanged. Its package-lock.json matches the source
 candidate: e380ea95c9e78e21f49fd9a473cf999b7b7ea91caa7de8ddd298f3f62a8daf96.
+The ZIP and SOURCE-MANIFEST.json belong to the historical baseline, not the
+52-unit/48-integration public run. That public run's exported TAP logs are
+separate files named security-unit.tap and security-integration.tap.
 These hashes establish byte identity against the recorded values, not author
 identity or an independently signed hardware result.
 
@@ -60,9 +80,13 @@ low package entries for one underlying Elliptic advisory. It remains unresolved;
 no patched version was listed. Source: dependency-audit.json and
 https://github.com/advisories/GHSA-848j-6mx2-7j84
 A zero-count result for other severities is not a security certification.
-GitHub also warned about pinned actions targeting deprecated Node 20; the run
+The historical run also warned about pinned actions targeting deprecated Node 20; it
 used forced Node 24 for those actions and succeeded. The TAP logs retain module
 mocking warnings. These warnings have not been silently removed.
+Scoped dependency-path review and exact proxy source approval are documented in
+SECURITY-DISPOSITION.md. Neither the source pin nor the CI results establish
+the current remote runtime or complete engine remediation. Post-incident live
+deployment verification remains unestablished; see INCIDENT-BOUNDARY.md.
 
 ORIGINALITY AND ATTRIBUTION
 The public integration proposal belongs to think-in-universe, not this project:

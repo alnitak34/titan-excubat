@@ -11,7 +11,7 @@ The original artifact ZIP and source manifest are retained unchanged in review/.
 Full private Git history, research notes, credentials and billing are excluded.
 No additional inference or installation was used for this assembly.
 
-Subsequent LOCAL security candidate, 2026-11-10 (not yet integration-validated):
+Security revision prepared 2026-11-10 (validation result follows below):
 src/provenance-policy.mjs now requires the exact reviewed inference-proxy commit
 7924418b5eacb396a12ada208b0f2f0c82ec6d1d in addition to repository/workflow.
 test/provenance-policy.test.mjs adds two regression tests. 52 local unit tests
