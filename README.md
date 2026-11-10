@@ -110,7 +110,8 @@ an independent cryptographic audit or production security clearance.
 
 ## Release status
 
-This is a locally prepared publication candidate. Publication and public evidence access remain pending.
+Published source and included test evidence: https://github.com/alnitak34/titan-excubat.
+Historical source runs remain private; their exported integration logs are included in review/.
 The implementation is licensed under [MIT](LICENSE), copyright 2026 alnitak34. No claim of
 adoption, novelty, comparative superiority or hackathon outcome is made.
 The website is an illustrative interface, not a live verification service.

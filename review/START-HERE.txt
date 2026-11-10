@@ -1,5 +1,5 @@
 TITAN EXCUBAT — REVIEWER EVIDENCE PACK
-Prepared 2026-11-10. Local release draft, not yet published.
+Published 2026-11-10 at https://github.com/alnitak34/titan-excubat.
 
 CLAIM TO EVALUATE
 An experimental NEAR AI provider for DeepSeek Harness that withholds model
@@ -16,7 +16,7 @@ In the source package's test/integration/combined-loop.test.mjs, compare:
 Evidence: logs/integration.tap, tests 1, 5-10. These are recorded passing tests,
 not tests executed by opening this pack. Source reference:
 https://github.com/alnitak34/near-agent-verification-lab/blob/f3657c94202770c1d1d80a5909e1a4b9bab9a53b/test/integration/combined-loop.test.mjs
-The source-run URL is private. The same runtime/test code is included in this package; see ../test/integration/combined-loop.test.mjs. Public repository publication remains pending.
+The source-run URL is private. The same runtime/test code is included in this package; see ../test/integration/combined-loop.test.mjs. This package is now publicly available.
 
 WHAT IS REAL AND WHAT IS CONTROLLED
 Actual Harness services, production adapter and SDK encryption/signature code
@@ -76,4 +76,4 @@ NOT VERIFIED
 - Comparative superiority over a generic endpoint or competing integrations.
 - Reliability from repeated live measurements or production security clearance.
 - Root causes of the earlier live second-turn/provenance failures.
-- Public access to the final repository. MIT has now been applied; see ../LICENSE.
+- Adoption or reviewer acceptance of this public release. MIT applies; see ../LICENSE.

@@ -1,4 +1,4 @@
-Publication preparation, 2026-11-10. Not yet published.
+Published 2026-11-10: https://github.com/alnitak34/titan-excubat.
 
 Validated base: private GitHub run 42758734014, commit
 f3657c94202770c1d1d80a5909e1a4b9bab9a53b.
