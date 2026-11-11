@@ -5,6 +5,32 @@ export function requireValue(condition, code = 'NEARAI_UNSUPPORTED') {
   if (!condition) throw new GateError(code);
 }
 const text = value => typeof value === 'string';
+
+// JSON.parse keeps the last duplicate key; another parser in the host may keep
+// the first. Arguments are forwarded as raw text, so reject ambiguity here.
+// Expects syntactically valid JSON (call after JSON.parse succeeded).
+export function hasDuplicateKeys(source) {
+  const stack = [];
+  let expectKey = false;
+  for (let i = 0; i < source.length; i++) {
+    const ch = source[i];
+    if (ch === '"') {
+      let j = i + 1;
+      while (source[j] !== '"') j += source[j] === '\\' ? 2 : 1;
+      const keys = stack[stack.length - 1];
+      if (keys && expectKey) {
+        const key = JSON.parse(source.slice(i, j + 1));
+        if (keys.has(key)) return true;
+        keys.add(key); expectKey = false;
+      }
+      i = j;
+    } else if (ch === '{') { stack.push(new Set()); expectKey = true; }
+    else if (ch === '[') { stack.push(null); expectKey = false; }
+    else if (ch === '}' || ch === ']') { stack.pop(); expectKey = false; }
+    else if (ch === ',') expectKey = stack[stack.length - 1] instanceof Set;
+  }
+  return false;
+}
 const nonempty = value => text(value) && value.length > 0;
 function textContent(content) {
   requireValue(Array.isArray(content) && content.every(b => b.type === 'text' && text(b.text)));
@@ -12,7 +38,13 @@ function textContent(content) {
 }
 
 // No provider replay, multimodal input, or reasoning is silently discarded.
+// Unexpected exceptions (e.g. a null content block) are input problems, not
+// verification failures, so they surface as NEARAI_UNSUPPORTED.
 export function toRequest(options, maxOutputTokens) {
+  try { return buildRequest(options, maxOutputTokens); }
+  catch (error) { throw error instanceof GateError ? error : new GateError('NEARAI_UNSUPPORTED'); }
+}
+function buildRequest(options, maxOutputTokens) {
   requireValue(options.provider === 'nearai' && nonempty(options.model));
   requireValue(options.reasoningEffort === undefined && options.toolChoice === undefined);
   requireValue(Array.isArray(options.messages));
@@ -102,6 +134,7 @@ export function toChunks(response, request) {
     let args;
     try { args = JSON.parse(call.function.arguments); } catch { throw new GateError('NEARAI_RESPONSE'); }
     requireValue(args !== null && typeof args === 'object' && !Array.isArray(args), 'NEARAI_RESPONSE');
+    requireValue(!hasDuplicateKeys(call.function.arguments), 'NEARAI_RESPONSE');
     blocks.push({ type: 'tool-call', id: call.id, name: call.function.name, arguments: call.function.arguments });
   }
   requireValue(blocks.length > 0, 'NEARAI_RESPONSE');
