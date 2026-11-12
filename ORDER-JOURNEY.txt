@@ -1,0 +1,42 @@
+EXCUBAT — reproduce the complete order journey
+
+Purpose: verify the path from user request through Harness, EXCUBAT and the NEAR
+SDK to one harmless order lookup, then a verified final response.
+
+No-install option: inspect the GitHub Actions run linked alongside this package.
+For your own execution without installing on your computer, fork this branch into
+a PUBLIC repository and run Verified provider isolated integration with
+retain_evidence=false. Standard public GitHub-hosted runners are free under
+https://docs.github.com/en/billing/concepts/product-billing/github-actions
+Do not use a private repo or paid runner assuming the same cost boundary.
+The workflow installs pinned dependencies only on an ephemeral GitHub runner.
+No secrets, API key, wallet, live model call, cache or artifact upload is needed.
+
+Developer option (only on a disposable environment you choose):
+npm ci --ignore-scripts --no-audit --no-fund
+node --import ./test/integration/no-network.mjs --experimental-test-module-mocks --test --test-timeout=15000 --test-concurrency=1 test/integration/order-journey.test.mjs
+
+Expected seven scenarios:
+verified-permitted: one tool, two model turns, final fictional order status.
+tampered-response: zero tools and no released answer.
+gateway-only: zero tools and no released answer.
+permission-denied: zero tools; host policy wins despite verified output.
+approval-unavailable: zero tools; missing approval must not become permission.
+cancelled-before-verdict: zero tools, including after late signature completion.
+final-response-rejected: one read-only tool already ran; final answer withheld.
+The last case deliberately shows the limit: verification of a later response
+cannot undo an earlier action. This is why the only tool here is harmless.
+
+Check order-journey-results.json / EXCUBAT_JOURNEY_REPORT in the test log.
+Any assertion failure means the run does not pass. Check the exact branch/head SHA.
+The JSON is an unsigned test report, not a provider attestation.
+
+REAL: Harness agent loop, plugin, SDK encryption/decryption and response signature
+verification with ephemeral test keys. The tool runs inside Harness.
+CONTROLLED: hardware quote, TLS and provenance verdicts; model replies; network
+transport; fictional order. This does not prove acceptance of the live deployment.
+Network attempts through the tested Node transports throw TEST_NETWORK_FORBIDDEN.
+No production policy or measurement allowlist is weakened by this package.
+
+Independent reviewer: report the tested commit, which scenario differed, actual
+tool count and final output. A successful author run is not external adoption.
