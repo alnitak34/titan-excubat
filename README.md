@@ -1,6 +1,44 @@
 # TITAN EXCUBAT
 
-Experimental NEAR AI verified provider for DeepSeek Harness.
+Verified NEAR AI provider for DeepSeek Harness — a prototype for developers who
+need model output checked before it reaches an agent's tools.
+
+## Start here: one request, one visible result
+
+A user asks for a fictional order's status. Harness requests a lookup, EXCUBAT
+holds the response until verification succeeds, the host checks permission,
+and one read-only tool returns the order status. The final model reply is checked
+again before display. A verified response never overrides host permissions.
+
+**Inspect the complete controlled run:** [GitHub Actions evidence](https://github.com/alnitak34/titan-excubat/actions/runs/43170264921)
+at [`a679018`](https://github.com/alnitak34/titan-excubat/tree/a679018e98cc98f33e4f759ad9ceeb5968dbfc62).
+It passed 52 unit tests and 56 integration tests, with no failures or skipped tests.
+The seven order scenarios are in [the reproduction guide](ORDER-JOURNEY.txt);
+the [result record](records/order-journey-results.json) is unsigned test evidence.
+
+| Do | Expected result |
+| --- | --- |
+| Verify a permitted request | One fictional order lookup; verified final reply |
+| Tamper with a response or provide only a gateway signature | Zero tool executions |
+| Deny permission or leave approval unavailable | Zero tool executions, even with valid test signatures |
+| Cancel before verification completes | Zero tool executions, including after a late verdict |
+| Reject the second response | The final answer is withheld; the earlier read-only lookup is not undone |
+
+**Real in this run:** Harness, the production plugin, NEAR SDK encryption and
+response-signature checks using ephemeral test keys. **Controlled:** model replies,
+network transport, hardware/TLS and provenance verdicts, fictional order data.
+No live inference, payment, wallet transaction or server approval takes place.
+
+You can inspect the public run without installing anything. To reproduce it in
+an environment you choose, follow [ORDER-JOURNEY.txt](ORDER-JOURNEY.txt).
+Please report the tested commit, scenario, actual tool count and final output.
+This is a reproducibility request, not a claim of an independent security audit.
+
+**Live deployment acceptance remains NOT_APPROVED.** The controlled run does not
+establish that the current NEAR server is accepted under our deployment policy.
+Earlier live observations below are historical, not a current approval.
+
+## What the adapter contributes
 
 The adapter buffers a completion and releases no text, reasoning or tool-call
 chunks until the configured SDK checks pass and `verifyResponse(id)` returns
